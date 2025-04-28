@@ -1,4 +1,3 @@
-from transformers import AutoModel, AutoTokenizer
 from langchain_openai import ChatOpenAI
 import os
 from dotenv import load_dotenv
@@ -18,6 +17,3 @@ chat = ChatOpenAI(
     model = model_name,
     temperature=temperature
 )
-
-tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = AutoModel.from_pretrained(model_name, device_map="auto")

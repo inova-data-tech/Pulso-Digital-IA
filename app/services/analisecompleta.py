@@ -35,6 +35,6 @@ def analise_completa(df_posts, df_comments, busca):
     df_posts.to_csv("analise_posts.csv", index=False)
     df_comments.to_csv("analise_comments.csv", index=False)
 
-busca="iphone"
+busca="S25 ultra"
 df_posts, df_comments = buscarposts(busca)
 analise_completa(df_posts, df_comments, busca)

@@ -19,17 +19,15 @@ def clean_text(text):
 
 def buscarposts(busca):
     posts = []
-    # Buscar posts contendo a palavra-chave
 
     for post in reddit.subreddit("all").search(busca, limit=1):
-        post_date = datetime.datetime.fromtimestamp(post.created_utc)
         posts.append({
             "id": post.id,
             "title": post.title,
             "text": post.selftext,
             "score": post.score,
             "url": post.url,
-            "post_date": post_date,
+            "post_date": datetime.datetime.fromtimestamp(post.created_utc),
             "num_comments": post.num_comments
         })
 
